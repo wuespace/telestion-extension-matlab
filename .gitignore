@@ -1,6 +1,8 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea
+gradle.properties
 .github.credentials
+libs/*.jar
 
 ### Kotlin template
 # Compiled class file

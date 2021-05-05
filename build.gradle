@@ -16,7 +16,11 @@ repositories {
             password = System.getenv("GITHUB_TOKEN") == null ? GITHUB_TOKEN : System.getenv("GITHUB_TOKEN")
         }
     }
+    flatDir {
+        dirs 'lib'
+    }
 }
+
 
 publishing {
     repositories {
@@ -41,8 +45,12 @@ publishing {
 }
 
 dependencies {
-    implementation 'de.wuespace.telestion:telestion-api:0.1.2'
-    implementation 'de.wuespace.telestion:telestion-services:0.1.2'
+    //the matlab package
+    implementation name: 'engine'
+
+    implementation 'de.wuespace.telestion:telestion-api:0.2.1'
+    implementation 'de.wuespace.telestion:telestion-services:0.2.1'
+    implementation 'de.wuespace.telestion:telestion-examples:0.2.1'
 
     implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.30'
     implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
